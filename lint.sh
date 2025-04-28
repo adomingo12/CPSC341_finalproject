@@ -22,5 +22,5 @@ then
 fi
 
 echo "Running flake8..."
-flake8 src/ tests/ > /dev/null 2>&1
+flake8 src/ tests/ | head -n 20
 echo "flake8 finished ✅"
