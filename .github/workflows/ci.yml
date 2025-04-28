@@ -38,3 +38,12 @@ jobs:
 
     - name: Run Tests (make test)
       run: make test
+
+    - name: Build Project (make build)
+      run: make build
+
+    - name: Package Project (make package)
+      run: make package
+
+    - name: Clean Build Artifacts (make clean)
+      run: make clean
