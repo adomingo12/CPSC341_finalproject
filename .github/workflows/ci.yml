@@ -1,0 +1,42 @@
+name: mypl CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install Python dependencies
+      run: |
+        pip install pytest flake8
+
+    - name: Check if Make is installed, and install if missing
+      run: |
+        if ! command -v make &> /dev/null
+        then
+          echo "❌ make is not installed. Installing make..."
+          sudo apt-get update -y > /dev/null 2>&1
+          sudo apt-get install make -y > /dev/null 2>&1
+          echo "✅ make successfully installed."
+        else
+          echo "✅ make is already installed."
+        fi
+
+    - name: Run Linter (make lint)
+      run: make lint
+
+    - name: Run Tests (make test)
+      run: make test

@@ -1,0 +1,25 @@
+// This code is about working with functions and priting it out
+int mult(int x, int y){
+    return x * y;
+}
+
+double div(int x, int y){
+    return x / y;
+}
+
+int add(int x, int y){
+    return x + y;
+}
+
+int sub(int x, int y){
+    return x - y;
+}
+
+void main(){
+    print("I created a function and I want to show you:\n");
+    print("Multiplying 5 * 6 is ");
+    print(" ");
+    print(mult(5, 6));
+    print("\n");
+    print("That is so cool!\n");
+}

@@ -1,0 +1,26 @@
+// This is about messing with for and while loops. Also about working with user input.
+void main(){
+    print("Testing For and while loops\n");
+    print("Now counting to 10:\n");
+    print("Using a for loop:\n");
+    for (int i = 1; i <= 10; i = i + 1){
+        print(i);
+        print("\n");
+    }
+
+    print("Now in a while loop:\n");
+    int i = 1;
+    while (i <= 10)
+    {
+        print(i);
+        print("\n");
+        i = i + 1;
+    }
+
+    print("Type a word or two:\n");
+    string n = input();
+    for (i = 0; i < length(n); i = i + 1){
+        print(get(i, n));
+        print("\n");
+    }
+}
