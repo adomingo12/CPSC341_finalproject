@@ -1,14 +1,12 @@
 name: mypl CI/CD Pipeline
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  push:     # 🔥 Run on ALL pushes to ANY branch
+  pull_request:  # 🔥 Run on ALL pull requests
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04   # 🔥 Stable and consistent Ubuntu version
 
     steps:
     - name: Checkout repository
